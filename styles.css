@@ -10,10 +10,10 @@ body {
 header {
     background: #44475A;
     color: #FF79C6;
-    padding: 15px;
+    padding: 10px; /* увеличено для лучшего пространства */
     text-align: center;
+    font-size: 1.1em;
     transition: background 0.5s ease-in-out;
-    font-size: 1.5em;
 }
 
 nav ul {
@@ -21,11 +21,12 @@ nav ul {
     padding: 0;
     text-align: center;
     background: #BD93F9;
+    margin: 0; /* добавлено для выравнивания */
     transition: background 0.5s ease-in-out;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
@@ -33,20 +34,24 @@ nav ul li a {
     color: #282A36;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.3s ease;
+    padding: 10px 15px; /* добавлено для увеличения области кликабельности */
+    transition: color 0.3s ease, background 0.3s ease; /* добавлено плавное изменение фона */
+    border-radius: 5px; /* добавлено для округления */
 }
 
 nav ul li a:hover {
     color: #FF79C6;
+    background: #282A36; /* добавлен эффект фона при наведении */
 }
 
 section {
     padding: 20px;
-    margin: 10px;
+    margin: 20px auto; /* увеличено пространство для лучшего выравнивания */
     background: #282A36;
-    border-radius: 5px;
+    border-radius: 10px; /* округленные углы */
     box-shadow: 0px 0px 10px rgba(255, 121, 198, 0.5);
-    transition: background 0.5s ease-in-out;
+    transition: background 0.5s ease-in-out, box-shadow 0.3s ease-in-out;
+    max-width: 900px; /* ограничено максимальное значение ширины */
 }
 
 footer {
@@ -74,6 +79,6 @@ footer {
 
     section {
         padding: 15px;
-        margin: 5px;
+        margin: 10px;
     }
 }
