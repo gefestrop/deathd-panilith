@@ -5,6 +5,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Смертная казнь: за и против</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background: linear-gradient(to right, #000000, #660000);
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background: #990000;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        nav ul {
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+            background: rgba(255, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        nav ul li {
+            list-style: none;
+            margin: 0 10px;
+        }
+        nav ul li a {
+            display: inline-block;
+            padding: 12px 18px;
+            background: #660000;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            font-weight: bold;
+            border: 2px solid #ff0000;
+        }
+        nav ul li a:hover {
+            background: #ff0000;
+            color: #000000;
+            border: 2px solid #ffffff;
+        }
+        section {
+            padding: 30px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.7);
+            max-width: 900px;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+        }
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        footer {
+            background: #990000;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const sections = document.querySelectorAll("section");
+            function checkScroll() {
+                sections.forEach(section => {
+                    const rect = section.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        section.classList.add("visible");
+                    }
+                });
+            }
+            window.addEventListener("scroll", checkScroll);
+            checkScroll();
+        });
+    </script>
 </head>
 <body>
     <header>
@@ -25,37 +108,36 @@
     
     <section id="intro">
         <h2>Введение</h2>
-        <p>В этом разделе рассматриваются основные аспекты смертной казни, её историческое развитие и значимость в современном мире.</p>
+        <p>Смертная казнь остается одной из самых спорных тем современного общества. Этот раздел раскрывает основные аспекты вопроса.</p>
     </section>
     
     <section id="definition">
         <h2>Определение</h2>
-        <p>Смертная казнь - это наказание, предусматривающее лишение человека жизни государством в качестве наказания за совершение преступления.</p>
+        <p>Смертная казнь - это высшая мера наказания, применяемая государством к преступникам за особо тяжкие преступления.</p>
     </section>
     
     <section id="history">
         <h2>История смертной казни</h2>
-        <p>Смертная казнь - одно из древнейших наказаний, известных человечеству. Методы исполнения менялись со временем - от обезглавливания и сожжения до смертельной инъекции.</p>
+        <p>Смертная казнь применялась с древних времен. В разные эпохи использовались различные методы казни: от распятия в Древнем Риме до смертельной инъекции в современных государствах.</p>
     </section>
     
     <section id="pros">
         <h2>Аргументы за смертную казнь</h2>
         <ul>
-            <li><strong>Справедливость:</strong> кара за тяжкие преступления.</li>
-            <li><strong>Сдерживание:</strong> уменьшение преступности.</li>
-            <li><strong>Защита общества:</strong> устранение угрозы.</li>
+            <li><strong>Справедливость:</strong> смертная казнь является наказанием за самые жестокие преступления.</li>
+            <li><strong>Сдерживание:</strong> угроза высшей меры может предотвратить преступления.</li>
+            <li><strong>Защита общества:</strong> устранение особо опасных преступников.</li>
         </ul>
     </section>
     
     <section id="cons">
         <h2>Аргументы против смертной казни</h2>
         <ul>
-            <li><strong>Необратимость:</strong> риск ошибочного приговора.</li>
-            <li><strong>Неэффективность:</strong> не снижает преступность.</li>
-            <li><strong>Этика:</strong> нарушение прав человека.</li>
+            <li><strong>Необратимость:</strong> ошибки правосудия могут стоить невинной жизни.</li>
+            <li><strong>Неэффективность:</strong> исследования показывают, что смертная казнь не снижает уровень преступности.</li>
+            <li><strong>Моральные аспекты:</strong> смертная казнь нарушает право на жизнь.</li>
         </ul>
     </section>
-    
     <section id="international">
         <h2>Международная практика</h2>
         <p>Применение смертной казни в различных странах:</p>
@@ -81,7 +163,7 @@
     </section>
     
     <footer>
-        <p>&copy; 2025 Проектная работа </p>
+        <p>&copy; 2025 Проектная работа</p>
     </footer>
 </body>
 </html>
